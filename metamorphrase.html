@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metamorphrase — Boutique digitale</title>
-<meta name="description" content="Metamorphrase — La boutique digitale de vos livres, guides et formations. E-books, guides pratiques et formations en ligne. Commande simple par WhatsApp, paiement Mobile Money.">
-<meta property="og:title" content="Metamorphrase — Boutique digitale">
-<meta property="og:description" content="E-books, guides pratiques et formations en ligne. Commande par WhatsApp.">
+<title>MétamorPhrase — Boutique digitale</title>
+<meta name="description" content="MétamorPhrase — livres, formations et produits digitaux du Dr Lury Nkouessom. E-books, formations en ligne, podcasts. Commande simple par WhatsApp, paiement Mobile Money.">
+<meta property="og:title" content="MétamorPhrase — Boutique digitale">
+<meta property="og:description" content="E-books, formations en ligne et contenus exclusifs. Commande par WhatsApp au +223 93 48 88 80.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232D1B4E'/><text x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='18' fill='%23D4A94A' font-weight='bold'>M</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%231B2A52'/><text x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='18' fill='%23C8913C' font-weight='bold'>M</text></svg>">
 <style>
 :root{
-  --ink:#2D1B4E;        /* violet profond — couleur principale */
-  --ink-soft:#4A3570;
-  --gold:#D4A94A;       /* accent or */
-  --gold-dark:#B8902F;
+  --ink:#1B2A52;        /* bleu marine du logo — couleur principale */
+  --ink-soft:#2E4070;
+  --gold:#C8913C;       /* ocre doré du logo */
+  --gold-dark:#A9762A;
   --teal:#1E7A74;       /* accent formations */
   --paper:#FAF7F2;
   --card:#FFFFFF;
@@ -35,11 +35,12 @@ img{max-width:100%}
 header{position:sticky;top:0;z-index:50;background:var(--ink);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.25)}
 .nav{max-width:1140px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px}
 .brand{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
-.brand-mark{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--gold),#E8C87E);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;flex-shrink:0}
+.brand-mark{width:42px;height:42px;border-radius:50%;overflow:hidden;background:#fff;flex-shrink:0}
+.brand-mark img{width:100%;height:100%;object-fit:cover;display:block}
 .brand-name{font-size:20px;font-weight:700;letter-spacing:.5px;white-space:nowrap}
-.brand-tag{font-size:10.5px;color:#C9BEDB;font-style:italic;display:block;margin-top:1px}
+.brand-tag{font-size:10.5px;color:#BCC8E2;font-style:italic;display:block;margin-top:1px}
 .nav-links{display:flex;gap:18px;font-size:13.5px}
-.nav-links a{color:#DDD5EA;transition:color .15s}
+.nav-links a{color:#D9DFEF;transition:color .15s}
 .nav-links a:hover{color:var(--gold)}
 .cart-btn{position:relative;background:var(--gold);color:var(--ink);border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:7px}
 .cart-btn:hover{background:#E0B95E}
@@ -47,18 +48,18 @@ header{position:sticky;top:0;z-index:50;background:var(--ink);color:#fff;box-sha
 @media(max-width:640px){.nav-links{display:none}.brand-name{font-size:17px}}
 
 /* ---------- Hero ---------- */
-.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink-soft) 70%,#5B3E8A 100%);color:#fff;padding:56px 20px 64px;text-align:center;position:relative;overflow:hidden}
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink-soft) 70%,#3A5390 100%);color:#fff;padding:56px 20px 64px;text-align:center;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80% -10%,rgba(212,169,74,.22),transparent 55%)}
 .hero>*{position:relative;z-index:1}
 .hero h1{font-size:clamp(30px,5.5vw,48px);letter-spacing:.5px;margin-bottom:12px}
 .hero h1 em{color:var(--gold);font-style:normal}
-.hero p{max-width:640px;margin:0 auto 26px;font-size:15.5px;line-height:1.65;color:#E4DDF0}
+.hero p{max-width:640px;margin:0 auto 26px;font-size:15.5px;line-height:1.65;color:#E2E7F4}
 .hero-cta{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .btn{display:inline-flex;align-items:center;gap:8px;border-radius:9px;padding:12px 22px;font-size:14px;font-weight:700;border:none;transition:transform .15s,box-shadow .15s}
 .btn:hover{transform:translateY(-2px)}
 .btn-gold{background:var(--gold);color:var(--ink)}
 .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
-.hero-badges{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:34px;font-size:12.5px;color:#CBC0DE}
+.hero-badges{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:34px;font-size:12.5px;color:#C3CDE4}
 .hero-badges span{display:flex;align-items:center;gap:7px}
 
 /* ---------- Toolbar / filtres ---------- */
@@ -115,7 +116,7 @@ main{max-width:1140px;margin:0 auto;padding:0 20px}
 .pay-item span{font-size:12.5px;color:var(--muted);font-family:system-ui,sans-serif}
 
 /* ---------- Footer ---------- */
-footer{background:var(--ink);color:#C9BEDB;padding:36px 20px;text-align:center;font-size:13px}
+footer{background:var(--ink);color:#BCC8E2;padding:36px 20px;text-align:center;font-size:13px}
 footer .brand-name{color:#fff}
 footer a{color:var(--gold)}
 footer p{margin-top:8px;line-height:1.7}
@@ -154,10 +155,10 @@ footer p{margin-top:8px;line-height:1.7}
 <header>
   <div class="nav">
     <a class="brand" href="#top">
-      <div class="brand-mark">M</div>
+      <div class="brand-mark"><img src="assets/logo.jpg" alt="Logo MétamorPhrase"></div>
       <div>
-        <span class="brand-name">Metamorphrase</span>
-        <span class="brand-tag">Livres &amp; savoirs numériques</span>
+        <span class="brand-name">MétamorPhrase</span>
+        <span class="brand-tag">Les mots changent tout</span>
       </div>
     </a>
     <nav class="nav-links sans">
@@ -172,16 +173,17 @@ footer p{margin-top:8px;line-height:1.7}
 </header>
 
 <section class="hero" id="top">
-  <h1>Transformez votre lecture,<br><em>métamorphosez</em> vos idées.</h1>
-  <p>E-books, guides pratiques et formations en ligne — livrés directement sur votre téléphone ou votre ordinateur. Commandez en deux clics via WhatsApp, payez par Mobile Money, recevez vos fichiers aussitôt.</p>
+  <img src="assets/logo.jpg" alt="MétamorPhrase" style="width:110px;height:110px;border-radius:50%;margin-bottom:18px;box-shadow:0 6px 24px rgba(0,0,0,.35)">
+  <h1>Et si un livre pouvait<br><em>changer votre vie</em> ?</h1>
+  <p>MétamorPhrase réunit les livres, formations et produits digitaux du Dr&nbsp;Lury Nkouessom — avocat, expert judiciaire, docteur en droit et auteur de plus de trente ouvrages. Des contenus clairs, pertinents et actionnables, pour apprendre, évoluer et passer à l'action.</p>
   <div class="hero-cta">
     <a class="btn btn-gold sans" href="#catalogue">Parcourir la boutique</a>
     <a class="btn btn-ghost sans" href="#comment">Comment ça marche ?</a>
   </div>
   <div class="hero-badges sans">
     <span>📚 E-books (PDF &amp; EPUB)</span>
-    <span>🧭 Guides pratiques</span>
     <span>🎓 Formations en ligne</span>
+    <span>🎙️ Podcasts</span>
     <span>⚡ Livraison immédiate</span>
   </div>
 </section>
@@ -226,9 +228,9 @@ footer p{margin-top:8px;line-height:1.7}
 
   <div class="pay" id="paiement">
     <h2>Moyens de paiement acceptés</h2>
-    <p>Le numéro de paiement exact vous est confirmé lors de la commande WhatsApp.</p>
+    <p>Paiement Mobile Money au <strong class="sans">+223 93 48 88 80</strong> — confirmé lors de la commande WhatsApp.</p>
     <div class="pay-grid">
-      <div class="pay-item"><strong>🟠 Orange Money</strong><span>Mali &amp; zone UEMOA</span></div>
+      <div class="pay-item"><strong>🟠 Orange Money</strong><span>+223 93 48 88 80</span></div>
       <div class="pay-item"><strong>🔵 Moov Money</strong><span>Mali &amp; zone UEMOA</span></div>
       <div class="pay-item"><strong>🌊 Wave</strong><span>Sénégal, Côte d'Ivoire, Mali…</span></div>
       <div class="pay-item"><strong>🏦 Virement bancaire</strong><span>Sur demande</span></div>
@@ -237,10 +239,12 @@ footer p{margin-top:8px;line-height:1.7}
 </main>
 
 <footer>
-  <span class="brand-name">Metamorphrase</span>
-  <p>Boutique digitale — e-books, guides &amp; formations.<br>
-  Commandes &amp; assistance : <a href="https://wa.me/22390157069" target="_blank" rel="noopener">WhatsApp +223 90 15 70 69</a></p>
-  <p class="sans" style="font-size:11px;opacity:.7">© 2026 Metamorphrase. Tous droits réservés.</p>
+  <img src="assets/logo.jpg" alt="MétamorPhrase" style="width:64px;height:64px;border-radius:50%;margin-bottom:10px">
+  <br><span class="brand-name">MétamorPhrase</span>
+  <p>Faire des mots un moteur de changement.<br>
+  Livres, formations &amp; produits digitaux du Dr Lury Nkouessom.<br>
+  Commandes &amp; assistance : <a href="https://wa.me/22393488880" target="_blank" rel="noopener">WhatsApp +223 93 48 88 80</a> · <a href="https://www.metamorphrase.com" target="_blank" rel="noopener">www.metamorphrase.com</a></p>
+  <p class="sans" style="font-size:11px;opacity:.7">© 2026 MétamorPhrase. Tous droits réservés.</p>
 </footer>
 
 <div class="overlay" id="overlay"></div>
@@ -263,8 +267,8 @@ footer p{margin-top:8px;line-height:1.7}
    CONFIGURATION — modifiez ces valeurs selon vos besoins
    ================================================================ */
 const CONFIG = {
-  whatsapp: "22390157069",          // numéro WhatsApp de la boutique (sans +)
-  shopName: "Metamorphrase",
+  whatsapp: "22393488880",          // numéro WhatsApp MétamorPhrase (sans +)
+  shopName: "MétamorPhrase",
   currency: "FCFA",
 };
 
@@ -278,19 +282,19 @@ const CONFIG = {
    ================================================================ */
 const EBOOKS = [
 
-  {cat:"roman",t:"Le Serment du Boli",a:"Lury NKOUESSOM",p:5000,d:"Dans la république corrompue du Wongo, les serments sur la Bible et la Constitution sont devenus une farce. Le nouveau Ministre de la Justice propose l'impensable : que les dirigeants jurent sur le Boli, un fétiche ancestral qui punit le mensonge du cœur. Thriller politico-mystique haletant."},
-  {cat:"roman",t:"Les Héritiers du Soleil Noir",a:"Lury NKOUESSOM",p:5000,d:"Double épopée entre l'Afrique antique et 2035. Dans le royaume de Ta-Seti, le scribe Kemet fuit avec un savoir sacré. Au Katiaba contemporain, l'archéologue Aminata suit ses traces face à une multinationale prédatrice. Fresque monumentale sur la mémoire, la résistance et la renaissance africaine."},
+  {cat:"roman",t:"Le Serment du Boli",a:"Lury NKOUESSOM",p:5000,img:"assets/covers/serment-du-boli.jpg",d:"Dans la république corrompue du Wongo, les serments sur la Bible et la Constitution sont devenus une farce. Le nouveau Ministre de la Justice propose l'impensable : que les dirigeants jurent sur le Boli, un fétiche ancestral qui punit le mensonge du cœur. Thriller politico-mystique haletant."},
+  {cat:"roman",t:"Les Héritiers du Soleil Noir",a:"Lury NKOUESSOM",p:5000,img:"assets/covers/heritiers-soleil-noir.jpg",d:"Double épopée entre l'Afrique antique et 2035. Dans le royaume de Ta-Seti, le scribe Kemet fuit avec un savoir sacré. Au Katiaba contemporain, l'archéologue Aminata suit ses traces face à une multinationale prédatrice. Fresque monumentale sur la mémoire, la résistance et la renaissance africaine."},
   {cat:"roman",t:"Le Rêve Trahi d'Addis Abeba",a:"Lury NKOUESSOM",p:5000,d:"Addis-Abeba, mai 1963. L'Afrique tout entière rêve d'unité. Mais au sommet du Caire en 1964, les idéalistes perdent face aux pragmatiques : les frontières coloniales seront maintenues. Roman-fresque sur le moment où le continent a choisi la division. Et si l'histoire avait pris un autre chemin ?"},
-  {cat:"roman",t:"L'Arbre sans Racines",a:"Lury NKOUESSOM",p:5000,d:"Dans la République fictive de Kémalie, un jeune professeur de droit découvre que la démocratie multipartite importée divise plus qu'elle ne rassemble. Inspiré par Simone Weil et l'arbre à palabres, il rédige un manifeste explosif. Roman politique sur l'Afrique en quête de son propre modèle."},
+  {cat:"roman",t:"L'Arbre sans Racines",a:"Lury NKOUESSOM",p:5000,img:"assets/covers/arbre-sans-racines.jpg",d:"Dans la République fictive de Kémalie, un jeune professeur de droit découvre que la démocratie multipartite importée divise plus qu'elle ne rassemble. Inspiré par Simone Weil et l'arbre à palabres, il rédige un manifeste explosif. Roman politique sur l'Afrique en quête de son propre modèle."},
   {cat:"roman",t:"Ce Que Nous Ne Disons Pas",a:"Lury NKOUESSOM",p:5000,d:"Imany, cadre brillant tiraillé entre monogamie et héritage polygame. Malia, intellectuelle blessée qui se reconstruit par l'écriture. Un roman qui explore les silences qui détruisent les couples africains modernes, entre traditions héritées et désirs inavoués."},
   {cat:"roman",t:"Le Poids des Ombres",a:"Lury NKOUESSOM",p:5000,d:"Drissa, architecte célèbre de Bamako, Aïssata sa femme pharmacienne, Mariam l'artiste libre qui fait tout basculer. Quand l'infidélité éclate, chacun doit affronter ses propres ruines. Un roman à trois voix sur l'amour, la trahison et la reconstruction dans l'Afrique urbaine d'aujourd'hui."},
   {cat:"roman",t:"Les Femmes de l'Almamy",a:"Lury NKOUESSOM",p:5000,d:"Reines, stratèges et résistantes : les femmes qui ont façonné l'empire du Fouta-Djalon. Roman historique où le pouvoir au féminin s'exerce dans l'ombre des trônes et la lumière des sacrifices."},
-  {cat:"roman",t:"Modibo Keita : le lion de Bamako",a:"Lury NKOUESSOM",p:5000,d:"Premier roman jamais consacré à Modibo Keïta. De l'enfant du Soudan français au Palais de Koulouba, du rêve fédéraliste à la cellule de Kidal : l'intimité d'un homme qui a porté le destin d'un peuple sur ses épaules. Volume 1 de la collection Mémoire des Pères."},
+  {cat:"roman",t:"Modibo Keita : le lion de Bamako",a:"Lury NKOUESSOM",p:5000,img:"assets/covers/lion-de-bamako.jpg",d:"Premier roman jamais consacré à Modibo Keïta. De l'enfant du Soudan français au Palais de Koulouba, du rêve fédéraliste à la cellule de Kidal : l'intimité d'un homme qui a porté le destin d'un peuple sur ses épaules. Volume 1 de la collection Mémoire des Pères."},
   {cat:"roman",t:"Kwame Nkrumah : l'exil du Titan",a:"Lury NKOUESSOM",p:5000,d:"Volume 2 de la collection Mémoire des Pères. De l'enfant de Nkroful au père du panafricanisme, puis la chute et l'exil : le récit intime d'un homme qui a osé rêver un continent entier, trahi par ceux qu'il voulait libérer."},
   {cat:"roman",t:"L'homme qui parlait au fleuve",s:"La tragédie de Patrice Lumumba",a:"Lury NKOUESSOM",p:5000,d:"Kinshasa, 1960. Un homme croit à l'indépendance, un fleuve charrie les promesses trahies. Roman inspiré du destin tragique de Patrice Lumumba, entre espoir fou et conspiration meurtrière."},
   {cat:"roman",t:"Les lignes de faille",a:"Lury NKOUESSOM",p:5000,d:"Samuel Diarra, redoutable avocat d'affaires à Paris, a tout sacrifié à sa réussite. Un appel de sa soeur Aminata le renvoie à un serment fait à leur père mourant : protéger la terre familiale. Entre deux mondes, il devra choisir qui il est vraiment."},
   {cat:"essai",t:"Afrique des Prophètes, Afrique des Profits",s:"Christianisme à Deux Visages",a:"Lury NKOUESSOM",p:3500,d:"Des megachurches climatisées aux camps de prière en brousse, l'auteur décortique l'industrie religieuse qui prospère sur la pauvreté africaine. Quand la foi devient business et que les pasteurs roulent en jet privé, qui protège les fidèles ?"},
-  {cat:"essai",t:"Dieu ne Porte pas de Rolex",s:"Arnaques Spirituelles et Financières",a:"Lury NKOUESSOM",p:3500,d:"De son enfance dans la guerre civile au Liberia aux temples climatisés de Bamako, l'auteur raconte comment fausses promesses et arnaques spirituelles détruisent des vies. Un récit personnel, cash et salutaire."},
+  {cat:"essai",t:"Dieu ne Porte pas de Rolex",s:"Arnaques Spirituelles et Financières",a:"Lury NKOUESSOM",p:3500,img:"assets/covers/dieu-rolex.jpg",d:"De son enfance dans la guerre civile au Liberia aux temples climatisés de Bamako, l'auteur raconte comment fausses promesses et arnaques spirituelles détruisent des vies. Un récit personnel, cash et salutaire."},
   {cat:"essai",t:"La Dot, l'Autel et le « Viens on Reste »",s:"Nouveaux Contrats du Mariage Africain",a:"Lury NKOUESSOM",p:3500,d:"De la dot symbolique de nos grands-parents aux listes interminables d'aujourd'hui, du mariage coutumier au «viens on reste» : comment naviguer entre traditions, pressions familiales et aspirations personnelles ? Le guide indispensable avant de dire oui."},
   {cat:"essai",t:"Monogame par Contrat, Polygame de Nature",a:"Lury NKOUESSOM",p:3500,d:"Monogame sur le papier, polygame dans le cœur. Enquête sur la fracture entre le contrat de mariage et la réalité des corps et des désirs dans les sociétés africaines contemporaines."},
   {cat:"essai",t:"L'Infidélité Expliquée aux Hommes Mariés",s:"(et à leurs Épouses)",a:"Lury NKOUESSOM",p:3500,d:"Amadou aime sa femme. Il aime aussi Fatou, son «deuxième bureau» depuis quatre ans. Il ne se voit ni menteur ni traître. À partir de cette scène banale dans des milliers de foyers africains, une analyse sans tabou de la polygynie clandestine et un manuel pour couples qui veulent se regarder en face."},
@@ -298,7 +302,7 @@ const EBOOKS = [
   {cat:"essai",t:"Polygamies d'Afrique",s:"Tabous, Réalités et Avenirs",a:"Lury NKOUESSOM",p:3500,d:"Ni plaidoyer pour le retour au passé, ni manifeste occidental anti-polygamie. L'auteur, juriste et polygame, ouvre la palabre : histoire, droit, économie, féminisme, tout est sur la table. Et si on assumait la polygamie au lieu de la pratiquer en cachette ? Le livre qui brise le tabou."},
   {cat:"essai",t:"Le Mariage, entre Intérêt et Sentiment",a:"Lury NKOUESSOM",p:3500,d:"Et si la crise du mariage venait du triomphe absolu de l'amour romantique ? Du mariage arrangé au mariage d'amour, puis au divorce de masse : une enquête qui déconstruit nos certitudes et propose un nouveau pacte conjugal, entre raison, sentiment et volonté."},
   {cat:"essai",t:"La Balance et le Cousin",s:"Le juge africain face aux siens",a:"Lury NKOUESSOM",p:3500,d:"L'indépendance de la justice menacée de toutes parts : pressions de l'exécutif, corruption privée, et liens du sang. À travers l'histoire du juge Bakary Koné, forcé de juger son propre cousin à Gao, cet essai-récit révèle comment famille, pouvoir et argent conspirent pour mettre le magistrat africain à genoux."},
-  {cat:"essai",t:"Dieu n'est pas Africain",a:"Lury NKOUESSOM",p:3500,d:"Du Liberia en guerre au Sahel, l'itinéraire d'un juriste africain devenu athée. Un plaidoyer sans concession pour libérer le continent de l'aliénation religieuse, qu'elle soit importée ou endogène. «L'avenir de l'Afrique sera humaniste, ou il ne sera pas.»"},
+  {cat:"essai",t:"Dieu n'est pas Africain",a:"Lury NKOUESSOM",p:3500,img:"assets/covers/dieu-pas-africain.jpg",d:"Du Liberia en guerre au Sahel, l'itinéraire d'un juriste africain devenu athée. Un plaidoyer sans concession pour libérer le continent de l'aliénation religieuse, qu'elle soit importée ou endogène. «L'avenir de l'Afrique sera humaniste, ou il ne sera pas.»"},
   {cat:"essai",t:"Le procès de Dieu",a:"Lury NKOUESSOM",p:3500,d:"Il y a vingt ans, j'ai prêté serment de défendre la justice. Aujourd'hui, j'accuse celui qui prétend en être l'architecte. Du Kivu au Sahel, un avocat met Dieu en procès : pièces à conviction, contre-interrogatoire des textes sacrés, réquisitoire, verdict. Et une lettre à ses enfants en guise d'épilogue."},
   {cat:"essai",t:"L'enfer n'existe pas",s:"Plus grande escroquerie morale de l'histoire",a:"Lury NKOUESSOM",p:3500,d:"À sept ans, assis à l'école du dimanche, l'auteur découvre un feu qui ne s'éteint jamais. Cette cicatrice ne l'a plus quitté. Enquête historique, psychologique et philosophique sur la plus grande escroquerie morale de l'histoire : une idée fabriquée par les hommes pour briser les esprits humains."},
   {cat:"essai",t:"Le Dividende de la dignité",s:"Pour un Revenu Universel de Base",a:"Lury NKOUESSOM",p:3500,d:"Et si chaque Africain recevait un revenu de base ? Pas une aumône, mais un dividende de dignité. Essai-manifeste qui chiffre, argumente et imagine un continent libéré de la misère structurelle."},
@@ -345,6 +349,10 @@ const EBOOKS = [
   {cat:"jur",c:"07",t:"Exercices de procédure pénale",a:"Pr Kissima GAKOU & Dr Lury NKOUESSOM",p:5000,d:"Cas pratiques, commentaires d'arrêts, dissertations juridiques : exercices corrigés et méthodologie détaillée pour réussir en procédure pénale malienne."},
   {cat:"jur",c:"07",t:"30 Maximes Juridiques Expliquées à ma Fille",a:"Dr Lury NKOUESSOM",p:3500,d:"Dura lex, sed lex. Pacta sunt servanda. In dubio pro reo. Un père juriste écrit à sa fille pour lui transmettre les 30 maximes qui fondent la justice depuis Rome. Chaque adage devient une leçon de vie, entre droit, philosophie et amour paternel."},
   {cat:"jur",c:"07",t:"Fiches pénales par infraction",a:"Protranslex Éditions",p:5000,d:"Une fiche par infraction : éléments constitutifs, peines encourues, circonstances aggravantes, jurisprudence. L'outil de révision et de pratique indispensable du pénaliste."},
+  {cat:"essai",t:"Et l'Homme créa Dieu à son image",s:"Généalogie d'une fabrication",a:"Dr Lury NKOUESSOM",p:10000,d:"Au commencement était un verset : « Dieu créa l'homme à son image. » Il suffit de remettre la phrase à l'endroit pour qu'elle devienne exacte. Ce livre instruit un dossier : il suit à la trace la fabrication du portrait — la peur qui invente des protecteurs, le désir qui les rend généreux, le pouvoir qui les couronne, les scribes qui les corrigent. On critique des croyances, jamais des croyants ; des systèmes, jamais des peuples."},
+  {cat:"essai",t:"De la Victimisation",s:"Comment le ressentiment postcolonial sert les faillites du pouvoir",a:"Dr Lury NKOUESSOM",p:3500,d:"Depuis les indépendances, un même récit traverse le débat public africain : nos malheurs viennent du dehors. Ce livre ne nie pas les dominations subies ; il soutient une chose plus dérangeante : leur conversion en culture politique permanente de l'excuse est devenue un obstacle à la responsabilité et à la souveraineté réelle. Le vrai contraire de la domination n'est pas la plainte. C'est la capacité."},
+  {cat:"essai",t:"De l'Homme providentiel",s:"Pourquoi l'attente du sauveur défait les institutions",a:"Dr Lury NKOUESSOM",p:3500,d:"À chaque crise, la même espérance ressurgit : qu'un homme paraisse, fort, lucide, providentiel. Or l'attente du sauveur défait ce qu'elle prétend protéger : elle déresponsabilise le peuple, atrophie les institutions et enferme dans un cycle de déceptions. Le vrai contraire du désordre n'est pas l'homme fort. C'est l'institution. Diptyque avec De la Victimisation."},
+  {cat:"jur",t:"Latinismes du français",s:"Dictionnaire de référence des locutions, adages, brocards et abréviations latines",a:"Dr Lury Taiwo NKOUESSOM",p:5000,d:"Du plus banal alibi au plus technique intuitu personae, le latin n'a jamais quitté le français. 270 entrées et 101 renvois : sens littéral, étymologie, définition, registre d'emploi, règles de composition et fautes à proscrire, avec un exemple en contexte. Le droit y occupe la première place, avec 91 entrées et un index thématique en neuf domaines."},
 ];
 
 /* ----------------------------------------------------------------
@@ -352,24 +360,37 @@ const EBOOKS = [
    Supprimez `demo:true` quand le produit est réel.
    ---------------------------------------------------------------- */
 const GUIDES = [
-  {cat:"guide",t:"Guide : publier son premier livre en Afrique",a:"Metamorphrase",p:7500,demo:true,
+  {cat:"guide",t:"Guide : publier son premier livre en Afrique",a:"MétamorPhrase",p:7500,demo:true,
    d:"De la première page au livre imprimé : manuscrit, correction, ISBN, impression à la demande et vente en ligne. Un parcours pas à pas adapté aux réalités du marché africain. (Exemple — remplacez par votre guide.)"},
-  {cat:"guide",t:"Guide : vivre de la traduction professionnelle",a:"Metamorphrase",p:9500,demo:true,
+  {cat:"guide",t:"Guide : vivre de la traduction professionnelle",a:"MétamorPhrase",p:9500,demo:true,
    d:"Trouver ses premiers clients, fixer ses tarifs, se faire assermenter, s'outiller : le guide complet pour bâtir une activité de traduction rentable. (Exemple — remplacez par votre guide.)"},
-  {cat:"guide",t:"Guide : l'IA au service des juristes",a:"Metamorphrase",p:8500,demo:true,
+  {cat:"guide",t:"Guide : l'IA au service des juristes",a:"MétamorPhrase",p:8500,demo:true,
    d:"Recherche juridique assistée, rédaction d'actes, veille législative : méthodes et outils concrets pour intégrer l'intelligence artificielle dans votre pratique du droit. (Exemple — remplacez par votre guide.)"},
 ];
 
 /* ----------------------------------------------------------------
-   FORMATIONS — EXEMPLES à remplacer par vos vraies formations.
+   FORMATIONS — parcours réels MétamorPhrase.
+   Ajustez librement les prix (p) : ils sont indicatifs.
    ---------------------------------------------------------------- */
 const FORMATIONS = [
-  {cat:"formation",t:"Formation : écrire et publier son livre en 90 jours",a:"Metamorphrase",p:35000,demo:true,
-   d:"Programme vidéo en 8 modules + ateliers d'écriture guidés : de l'idée au manuscrit terminé, puis à la publication. Accès à vie et accompagnement WhatsApp. (Exemple — remplacez par votre formation.)"},
-  {cat:"formation",t:"Formation : devenir traducteur agréé",a:"Metamorphrase",p:45000,demo:true,
-   d:"Méthodologie de la traduction juridique, certification des documents officiels, procédure d'agrément près les tribunaux : une formation complète, vidéos + supports PDF. (Exemple — remplacez par votre formation.)"},
-  {cat:"formation",t:"Formation : maîtriser la rédaction juridique",a:"Metamorphrase",p:30000,demo:true,
-   d:"Conclusions, requêtes, contrats : les techniques de rédaction des professionnels du droit, illustrées par des modèles téléchargeables. (Exemple — remplacez par votre formation.)"},
+  {cat:"formation",t:"De l'idée au Manuscrit",s:"Écrire son livre, de la première idée au texte terminé",a:"Dr Lury Nkouessom",p:35000,
+   d:"5 modules complets : la Fondation (trouver son idée, définir son lecteur, choisir son genre), l'Élan, la Construction, les Finitions (réécriture, correction) et l'Après (options de publication, préparer son pitch). Avec 10 outils pratiques inclus : routine et journal d'écriture, modèles de synopsis et de pitch, checklists de structure et de révision, exercices de déblocage."},
+  {cat:"formation",t:"Parcours Common Law",s:"Comprendre et pratiquer le droit anglo-saxon",a:"Dr Lury Nkouessom",p:45000,
+   d:"5 cours structurés : Introduction à la Common Law, Common Law vs Civil Law (analyse comparative), le droit des contrats, la responsabilité civile (Tort Law) et la Common Law appliquée au droit commercial international. Chaque cours est accompagné de son quiz d'évaluation. Indispensable aux juristes, traducteurs et étudiants francophones."},
+  {cat:"formation",t:"Pensée Critique",s:"Un parcours transformateur",a:"Dr Lury Nkouessom",p:25000,
+   d:"Apprendre à examiner les idées reçues, évaluer les arguments, détecter les manipulations et construire un jugement autonome. Un parcours pas à pas pour transformer durablement votre façon de penser, de décider et d'agir."},
+  {cat:"formation",t:"Traduction juridique : les contrats miniers",a:"Dr Lury Nkouessom",p:30000,
+   d:"Module spécialisé de traduction juridique appliquée aux contrats miniers : terminologie bilingue, clauses types, pièges de traduction et bonnes pratiques, par un traducteur agréé et expert judiciaire."},
+];
+
+/* ----------------------------------------------------------------
+   PODCASTS — contenus audio/vidéo offerts, envoyés via WhatsApp.
+   ---------------------------------------------------------------- */
+const PODCASTS = [
+  {cat:"podcast",t:"Le Serment du Boli — le podcast",a:"MétamorPhrase",p:0,
+   d:"Plongez dans l'univers du roman Le Serment du Boli avec cet épisode audio : les coulisses du thriller politico-mystique et les questions qu'il pose à nos institutions. Offert — demandez-le sur WhatsApp."},
+  {cat:"podcast",t:"Le Procès de Dieu — dialogue",a:"MétamorPhrase",p:0,
+   d:"Un dialogue vidéo à deux voix autour du Procès de Dieu : la foi, la justice et la raison face à face. Offert — demandez-le sur WhatsApp."},
 ];
 
 /* ================================================================
@@ -378,15 +399,16 @@ const FORMATIONS = [
 const META = {
   roman:     {label:"Roman",      format:"PDF / EPUB", colors:["#8B1A1A","#C0392B"]},
   essai:     {label:"Essai",      format:"PDF / EPUB", colors:["#B8741A","#D4862A"]},
-  jur:       {label:"Droit",      format:"PDF",        colors:["#1B2A4A","#34517F"]},
-  guide:     {label:"Guide",      format:"PDF",        colors:["#2D1B4E","#5B3E8A"]},
+  jur:       {label:"Droit",      format:"PDF",        colors:["#1B2A52","#34517F"]},
+  guide:     {label:"Guide",      format:"PDF",        colors:["#5B3E8A","#7B5BB0"]},
   formation: {label:"Formation",  format:"Vidéo + PDF",colors:["#125A55","#1E7A74"]},
+  podcast:   {label:"Podcast",    format:"Audio / Vidéo",colors:["#C8913C","#E0B45E"]},
 };
 const CATS = [
   {k:"tous",l:"Tous"},{k:"roman",l:"Romans"},{k:"essai",l:"Essais"},
-  {k:"jur",l:"Droit & OHADA"},{k:"guide",l:"Guides"},{k:"formation",l:"Formations"},
+  {k:"jur",l:"Droit & OHADA"},{k:"guide",l:"Guides"},{k:"formation",l:"Formations"},{k:"podcast",l:"Podcasts"},
 ];
-const ALL = [...EBOOKS, ...GUIDES, ...FORMATIONS].map((x,i)=>({...x,id:i}));
+const ALL = [...EBOOKS, ...GUIDES, ...FORMATIONS, ...PODCASTS].map((x,i)=>({...x,id:i}));
 
 const fmt = n => n.toLocaleString("fr-FR").replace(/ | /g," ");
 const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
@@ -419,18 +441,26 @@ function renderGrid(){
 function cardHTML(x){
   const m = META[x.cat];
   const inCart = cart.includes(x.id);
+  const coverStyle = x.img
+    ? `background:url('${x.img}') center 20%/cover no-repeat;height:210px`
+    : `background:linear-gradient(135deg,${m.colors[0]},${m.colors[1]})`;
+  const free = x.p===0;
+  const freeMsg = encodeURIComponent(`Bonjour ! J'aimerais recevoir gratuitement « ${x.t} » proposé sur la boutique ${CONFIG.shopName}. Merci !`);
   return `<article class="card">
-    <div class="cover" style="background:linear-gradient(135deg,${m.colors[0]},${m.colors[1]})">
+    <div class="cover" style="${coverStyle}">
       <div class="tags"><span class="tag">${m.label}</span><span class="tag">${m.format}</span>${x.demo?'<span class="tag demo">Exemple</span>':""}</div>
-      <h3>${x.t}</h3>
+      ${x.img?"":`<h3>${x.t}</h3>`}
     </div>
     <div class="card-body">
+      ${x.img?`<h3 style="font-size:15px;color:var(--ink);line-height:1.3;margin-bottom:2px">${x.t}</h3>`:""}
       ${x.s?`<p class="card-sub">${x.s}</p>`:""}
       <p class="card-author">${x.a}</p>
       <p class="card-desc">${x.d}</p>
       <div class="card-foot">
-        <span class="price">${fmt(x.p)} <small>${CONFIG.currency}</small></span>
-        <button class="add-btn${inCart?" added":""}" data-id="${x.id}">${inCart?"✓ Ajouté":"+ Panier"}</button>
+        <span class="price">${free?"Gratuit":fmt(x.p)+" "} ${free?"":`<small>${CONFIG.currency}</small>`}</span>
+        ${free
+          ? `<a class="add-btn" style="text-decoration:none" href="https://wa.me/${CONFIG.whatsapp}?text=${freeMsg}" target="_blank" rel="noopener">🎁 Recevoir</a>`
+          : `<button class="add-btn${inCart?" added":""}" data-id="${x.id}">${inCart?"✓ Ajouté":"+ Panier"}</button>`}
       </div>
     </div>
   </article>`;
