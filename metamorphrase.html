@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metamorphrase — Boutique digitale</title>
+<meta name="description" content="Metamorphrase — La boutique digitale de vos livres, guides et formations. E-books, guides pratiques et formations en ligne. Commande simple par WhatsApp, paiement Mobile Money.">
+<meta property="og:title" content="Metamorphrase — Boutique digitale">
+<meta property="og:description" content="E-books, guides pratiques et formations en ligne. Commande par WhatsApp.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232D1B4E'/><text x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-size='18' fill='%23D4A94A' font-weight='bold'>M</text></svg>">
+<style>
+:root{
+  --ink:#2D1B4E;        /* violet profond — couleur principale */
+  --ink-soft:#4A3570;
+  --gold:#D4A94A;       /* accent or */
+  --gold-dark:#B8902F;
+  --teal:#1E7A74;       /* accent formations */
+  --paper:#FAF7F2;
+  --card:#FFFFFF;
+  --text:#3A3344;
+  --muted:#8A8295;
+  --wa:#25D366;
+  --danger:#B33A3A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--text);-webkit-font-smoothing:antialiased}
+button{cursor:pointer;font-family:inherit}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+.sans{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:50;background:var(--ink);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.nav{max-width:1140px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
+.brand-mark{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--gold),#E8C87E);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;flex-shrink:0}
+.brand-name{font-size:20px;font-weight:700;letter-spacing:.5px;white-space:nowrap}
+.brand-tag{font-size:10.5px;color:#C9BEDB;font-style:italic;display:block;margin-top:1px}
+.nav-links{display:flex;gap:18px;font-size:13.5px}
+.nav-links a{color:#DDD5EA;transition:color .15s}
+.nav-links a:hover{color:var(--gold)}
+.cart-btn{position:relative;background:var(--gold);color:var(--ink);border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:7px}
+.cart-btn:hover{background:#E0B95E}
+.cart-count{background:var(--ink);color:#fff;border-radius:99px;min-width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:11px;padding:0 5px}
+@media(max-width:640px){.nav-links{display:none}.brand-name{font-size:17px}}
+
+/* ---------- Hero ---------- */
+.hero{background:linear-gradient(160deg,var(--ink) 0%,var(--ink-soft) 70%,#5B3E8A 100%);color:#fff;padding:56px 20px 64px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80% -10%,rgba(212,169,74,.22),transparent 55%)}
+.hero>*{position:relative;z-index:1}
+.hero h1{font-size:clamp(30px,5.5vw,48px);letter-spacing:.5px;margin-bottom:12px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{max-width:640px;margin:0 auto 26px;font-size:15.5px;line-height:1.65;color:#E4DDF0}
+.hero-cta{display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:9px;padding:12px 22px;font-size:14px;font-weight:700;border:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.hero-badges{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:34px;font-size:12.5px;color:#CBC0DE}
+.hero-badges span{display:flex;align-items:center;gap:7px}
+
+/* ---------- Toolbar / filtres ---------- */
+main{max-width:1140px;margin:0 auto;padding:0 20px}
+.section-head{text-align:center;margin:52px 0 8px}
+.section-head h2{font-size:26px;color:var(--ink)}
+.section-head p{color:var(--muted);font-size:14px;margin-top:6px}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin:22px 0 26px}
+.search{flex:1 1 260px;max-width:380px;position:relative}
+.search input{width:100%;padding:11px 14px 11px 38px;border:1.5px solid #DDD3EA;border-radius:9px;font-size:14px;background:#fff;font-family:inherit;color:var(--text)}
+.search input:focus{outline:none;border-color:var(--ink-soft)}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:.4}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.chip{border:1.5px solid #DDD3EA;background:#fff;color:var(--text);border-radius:99px;padding:8px 16px;font-size:13px;font-weight:600;transition:all .15s}
+.chip:hover{border-color:var(--ink-soft)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* ---------- Grille produits ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:18px;margin-bottom:56px}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:50px 0;font-style:italic}
+.card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 2px 14px rgba(45,27,78,.07);display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(45,27,78,.14)}
+.cover{height:120px;display:flex;align-items:flex-end;padding:12px 14px;position:relative;color:#fff}
+.cover h3{font-size:15px;line-height:1.28;text-shadow:0 1px 4px rgba(0,0,0,.35);position:relative;z-index:1}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 20%,rgba(0,0,0,.38))}
+.tags{position:absolute;top:10px;left:12px;right:12px;display:flex;gap:6px;z-index:2;flex-wrap:wrap}
+.tag{font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;background:rgba(255,255,255,.92);color:var(--ink);border-radius:5px;padding:3px 8px;font-family:system-ui,sans-serif}
+.tag.demo{background:#FBE9C8;color:#8A5A00}
+.card-body{padding:13px 15px 15px;display:flex;flex-direction:column;flex:1}
+.card-sub{font-size:11px;color:var(--muted);font-style:italic;margin-bottom:2px}
+.card-author{font-size:11.5px;color:var(--muted);margin-bottom:7px}
+.card-desc{font-size:12.5px;line-height:1.55;color:#5A5266;flex:1;margin-bottom:12px}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.price{font-size:17px;font-weight:700;color:var(--gold-dark);font-family:system-ui,sans-serif}
+.price small{font-size:10px;font-weight:400;color:var(--muted)}
+.add-btn{background:var(--ink);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:6px;font-family:system-ui,sans-serif}
+.add-btn:hover{background:var(--ink-soft)}
+.add-btn.added{background:var(--teal)}
+
+/* ---------- Comment ça marche ---------- */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin:26px 0 56px}
+.step{background:#fff;border-radius:12px;padding:24px 20px;text-align:center;box-shadow:0 2px 14px rgba(45,27,78,.06)}
+.step-num{width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--gold);font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:system-ui,sans-serif}
+.step h3{font-size:16px;color:var(--ink);margin-bottom:8px}
+.step p{font-size:13px;line-height:1.6;color:#5A5266}
+
+/* ---------- Paiement ---------- */
+.pay{background:#fff;border-radius:14px;padding:30px 26px;margin-bottom:56px;box-shadow:0 2px 14px rgba(45,27,78,.06)}
+.pay h2{font-size:22px;color:var(--ink);text-align:center;margin-bottom:6px}
+.pay>p{text-align:center;color:var(--muted);font-size:13.5px;margin-bottom:22px}
+.pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.pay-item{border:1.5px solid #EEE7F5;border-radius:10px;padding:16px;text-align:center}
+.pay-item strong{display:block;color:var(--ink);font-size:14.5px;margin-bottom:4px}
+.pay-item span{font-size:12.5px;color:var(--muted);font-family:system-ui,sans-serif}
+
+/* ---------- Footer ---------- */
+footer{background:var(--ink);color:#C9BEDB;padding:36px 20px;text-align:center;font-size:13px}
+footer .brand-name{color:#fff}
+footer a{color:var(--gold)}
+footer p{margin-top:8px;line-height:1.7}
+
+/* ---------- Panier (drawer) ---------- */
+.overlay{position:fixed;inset:0;background:rgba(20,10,40,.5);z-index:90;opacity:0;pointer-events:none;transition:opacity .2s}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(400px,100vw);background:#fff;z-index:100;transform:translateX(105%);transition:transform .25s ease;display:flex;flex-direction:column;box-shadow:-8px 0 30px rgba(0,0,0,.2)}
+.drawer.open{transform:none}
+.drawer-head{padding:18px 20px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:space-between}
+.drawer-head h2{font-size:18px}
+.drawer-close{background:none;border:none;color:#fff;font-size:24px;line-height:1}
+.drawer-items{flex:1;overflow-y:auto;padding:16px 20px}
+.cart-empty{text-align:center;color:var(--muted);font-style:italic;padding:40px 0}
+.cart-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #F0EAF7}
+.cart-item-info{flex:1;min-width:0}
+.cart-item-info strong{display:block;font-size:13.5px;color:var(--ink);line-height:1.35}
+.cart-item-info span{font-size:11.5px;color:var(--muted)}
+.cart-item-price{font-size:13.5px;font-weight:700;color:var(--gold-dark);font-family:system-ui,sans-serif;white-space:nowrap}
+.cart-remove{background:none;border:none;color:var(--danger);font-size:17px;line-height:1;padding:2px 4px}
+.drawer-foot{padding:16px 20px 20px;border-top:1.5px solid #F0EAF7}
+.total-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-size:15px;color:var(--ink)}
+.total-row strong{font-size:19px;font-family:system-ui,sans-serif;color:var(--gold-dark)}
+.wa-btn{width:100%;background:var(--wa);color:#fff;border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px}
+.wa-btn:hover{background:#1FB858}
+.wa-btn:disabled{background:#B9E6C9;cursor:not-allowed}
+.drawer-note{font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;line-height:1.5}
+
+/* ---------- Toast ---------- */
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,80px);background:var(--ink);color:#fff;padding:11px 20px;border-radius:9px;font-size:13.5px;z-index:110;transition:transform .25s;box-shadow:0 6px 20px rgba(0,0,0,.25);font-family:system-ui,sans-serif}
+.toast.show{transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top">
+      <div class="brand-mark">M</div>
+      <div>
+        <span class="brand-name">Metamorphrase</span>
+        <span class="brand-tag">Livres &amp; savoirs numériques</span>
+      </div>
+    </a>
+    <nav class="nav-links sans">
+      <a href="#catalogue">Catalogue</a>
+      <a href="#comment">Comment ça marche</a>
+      <a href="#paiement">Paiement</a>
+    </nav>
+    <button class="cart-btn sans" id="cartOpen" aria-label="Ouvrir le panier">
+      🛒 Panier <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <h1>Transformez votre lecture,<br><em>métamorphosez</em> vos idées.</h1>
+  <p>E-books, guides pratiques et formations en ligne — livrés directement sur votre téléphone ou votre ordinateur. Commandez en deux clics via WhatsApp, payez par Mobile Money, recevez vos fichiers aussitôt.</p>
+  <div class="hero-cta">
+    <a class="btn btn-gold sans" href="#catalogue">Parcourir la boutique</a>
+    <a class="btn btn-ghost sans" href="#comment">Comment ça marche ?</a>
+  </div>
+  <div class="hero-badges sans">
+    <span>📚 E-books (PDF &amp; EPUB)</span>
+    <span>🧭 Guides pratiques</span>
+    <span>🎓 Formations en ligne</span>
+    <span>⚡ Livraison immédiate</span>
+  </div>
+</section>
+
+<main>
+  <div class="section-head" id="catalogue">
+    <h2>Le catalogue</h2>
+    <p>Recherchez un titre ou filtrez par catégorie.</p>
+  </div>
+
+  <div class="toolbar">
+    <div class="search sans">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="q" placeholder="Rechercher un titre, un auteur…" aria-label="Rechercher">
+    </div>
+    <div class="chips sans" id="chips"></div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="section-head" id="comment">
+    <h2>Comment ça marche ?</h2>
+    <p>Trois étapes, aucune carte bancaire nécessaire.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Choisissez</h3>
+      <p>Ajoutez vos e-books, guides ou formations au panier, puis cliquez sur « Commander sur WhatsApp ». Votre commande est envoyée automatiquement, prête à valider.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Payez</h3>
+      <p>Réglez le montant par Orange Money, Moov Money, Wave ou virement. Les coordonnées de paiement vous sont confirmées directement dans la conversation WhatsApp.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Recevez</h3>
+      <p>Dès confirmation du paiement, vous recevez vos fichiers (PDF, EPUB) ou vos accès de formation par WhatsApp ou par e-mail. Simple et immédiat.</p>
+    </div>
+  </div>
+
+  <div class="pay" id="paiement">
+    <h2>Moyens de paiement acceptés</h2>
+    <p>Le numéro de paiement exact vous est confirmé lors de la commande WhatsApp.</p>
+    <div class="pay-grid">
+      <div class="pay-item"><strong>🟠 Orange Money</strong><span>Mali &amp; zone UEMOA</span></div>
+      <div class="pay-item"><strong>🔵 Moov Money</strong><span>Mali &amp; zone UEMOA</span></div>
+      <div class="pay-item"><strong>🌊 Wave</strong><span>Sénégal, Côte d'Ivoire, Mali…</span></div>
+      <div class="pay-item"><strong>🏦 Virement bancaire</strong><span>Sur demande</span></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="brand-name">Metamorphrase</span>
+  <p>Boutique digitale — e-books, guides &amp; formations.<br>
+  Commandes &amp; assistance : <a href="https://wa.me/22390157069" target="_blank" rel="noopener">WhatsApp +223 90 15 70 69</a></p>
+  <p class="sans" style="font-size:11px;opacity:.7">© 2026 Metamorphrase. Tous droits réservés.</p>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Panier">
+  <div class="drawer-head">
+    <h2>Votre panier</h2>
+    <button class="drawer-close" id="cartClose" aria-label="Fermer">×</button>
+  </div>
+  <div class="drawer-items" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="total-row"><span>Total</span><strong id="cartTotal">0 FCFA</strong></div>
+    <button class="wa-btn sans" id="waOrder">Commander sur WhatsApp</button>
+    <p class="drawer-note">Vous serez redirigé vers WhatsApp avec votre commande pré-remplie.<br>Paiement par Mobile Money, puis livraison immédiate de vos fichiers.</p>
+  </div>
+</aside>
+<div class="toast sans" id="toast"></div>
+
+<script>
+/* ================================================================
+   CONFIGURATION — modifiez ces valeurs selon vos besoins
+   ================================================================ */
+const CONFIG = {
+  whatsapp: "22390157069",          // numéro WhatsApp de la boutique (sans +)
+  shopName: "Metamorphrase",
+  currency: "FCFA",
+};
+
+/* ================================================================
+   CATALOGUE
+   ----------------------------------------------------------------
+   E-BOOKS : repris du catalogue Protranslex Éditions 2026.
+     cat: "roman" | "essai" | "jur"   t: titre   s: sous-titre
+     a: auteur   p: prix (FCFA)   d: description
+   Pour modifier un prix numérique, changez simplement p.
+   ================================================================ */
+const EBOOKS = [
+
+  {cat:"roman",t:"Le Serment du Boli",a:"Lury NKOUESSOM",p:5000,d:"Dans la république corrompue du Wongo, les serments sur la Bible et la Constitution sont devenus une farce. Le nouveau Ministre de la Justice propose l'impensable : que les dirigeants jurent sur le Boli, un fétiche ancestral qui punit le mensonge du cœur. Thriller politico-mystique haletant."},
+  {cat:"roman",t:"Les Héritiers du Soleil Noir",a:"Lury NKOUESSOM",p:5000,d:"Double épopée entre l'Afrique antique et 2035. Dans le royaume de Ta-Seti, le scribe Kemet fuit avec un savoir sacré. Au Katiaba contemporain, l'archéologue Aminata suit ses traces face à une multinationale prédatrice. Fresque monumentale sur la mémoire, la résistance et la renaissance africaine."},
+  {cat:"roman",t:"Le Rêve Trahi d'Addis Abeba",a:"Lury NKOUESSOM",p:5000,d:"Addis-Abeba, mai 1963. L'Afrique tout entière rêve d'unité. Mais au sommet du Caire en 1964, les idéalistes perdent face aux pragmatiques : les frontières coloniales seront maintenues. Roman-fresque sur le moment où le continent a choisi la division. Et si l'histoire avait pris un autre chemin ?"},
+  {cat:"roman",t:"L'Arbre sans Racines",a:"Lury NKOUESSOM",p:5000,d:"Dans la République fictive de Kémalie, un jeune professeur de droit découvre que la démocratie multipartite importée divise plus qu'elle ne rassemble. Inspiré par Simone Weil et l'arbre à palabres, il rédige un manifeste explosif. Roman politique sur l'Afrique en quête de son propre modèle."},
+  {cat:"roman",t:"Ce Que Nous Ne Disons Pas",a:"Lury NKOUESSOM",p:5000,d:"Imany, cadre brillant tiraillé entre monogamie et héritage polygame. Malia, intellectuelle blessée qui se reconstruit par l'écriture. Un roman qui explore les silences qui détruisent les couples africains modernes, entre traditions héritées et désirs inavoués."},
+  {cat:"roman",t:"Le Poids des Ombres",a:"Lury NKOUESSOM",p:5000,d:"Drissa, architecte célèbre de Bamako, Aïssata sa femme pharmacienne, Mariam l'artiste libre qui fait tout basculer. Quand l'infidélité éclate, chacun doit affronter ses propres ruines. Un roman à trois voix sur l'amour, la trahison et la reconstruction dans l'Afrique urbaine d'aujourd'hui."},
+  {cat:"roman",t:"Les Femmes de l'Almamy",a:"Lury NKOUESSOM",p:5000,d:"Reines, stratèges et résistantes : les femmes qui ont façonné l'empire du Fouta-Djalon. Roman historique où le pouvoir au féminin s'exerce dans l'ombre des trônes et la lumière des sacrifices."},
+  {cat:"roman",t:"Modibo Keita : le lion de Bamako",a:"Lury NKOUESSOM",p:5000,d:"Premier roman jamais consacré à Modibo Keïta. De l'enfant du Soudan français au Palais de Koulouba, du rêve fédéraliste à la cellule de Kidal : l'intimité d'un homme qui a porté le destin d'un peuple sur ses épaules. Volume 1 de la collection Mémoire des Pères."},
+  {cat:"roman",t:"Kwame Nkrumah : l'exil du Titan",a:"Lury NKOUESSOM",p:5000,d:"Volume 2 de la collection Mémoire des Pères. De l'enfant de Nkroful au père du panafricanisme, puis la chute et l'exil : le récit intime d'un homme qui a osé rêver un continent entier, trahi par ceux qu'il voulait libérer."},
+  {cat:"roman",t:"L'homme qui parlait au fleuve",s:"La tragédie de Patrice Lumumba",a:"Lury NKOUESSOM",p:5000,d:"Kinshasa, 1960. Un homme croit à l'indépendance, un fleuve charrie les promesses trahies. Roman inspiré du destin tragique de Patrice Lumumba, entre espoir fou et conspiration meurtrière."},
+  {cat:"roman",t:"Les lignes de faille",a:"Lury NKOUESSOM",p:5000,d:"Samuel Diarra, redoutable avocat d'affaires à Paris, a tout sacrifié à sa réussite. Un appel de sa soeur Aminata le renvoie à un serment fait à leur père mourant : protéger la terre familiale. Entre deux mondes, il devra choisir qui il est vraiment."},
+  {cat:"essai",t:"Afrique des Prophètes, Afrique des Profits",s:"Christianisme à Deux Visages",a:"Lury NKOUESSOM",p:3500,d:"Des megachurches climatisées aux camps de prière en brousse, l'auteur décortique l'industrie religieuse qui prospère sur la pauvreté africaine. Quand la foi devient business et que les pasteurs roulent en jet privé, qui protège les fidèles ?"},
+  {cat:"essai",t:"Dieu ne Porte pas de Rolex",s:"Arnaques Spirituelles et Financières",a:"Lury NKOUESSOM",p:3500,d:"De son enfance dans la guerre civile au Liberia aux temples climatisés de Bamako, l'auteur raconte comment fausses promesses et arnaques spirituelles détruisent des vies. Un récit personnel, cash et salutaire."},
+  {cat:"essai",t:"La Dot, l'Autel et le « Viens on Reste »",s:"Nouveaux Contrats du Mariage Africain",a:"Lury NKOUESSOM",p:3500,d:"De la dot symbolique de nos grands-parents aux listes interminables d'aujourd'hui, du mariage coutumier au «viens on reste» : comment naviguer entre traditions, pressions familiales et aspirations personnelles ? Le guide indispensable avant de dire oui."},
+  {cat:"essai",t:"Monogame par Contrat, Polygame de Nature",a:"Lury NKOUESSOM",p:3500,d:"Monogame sur le papier, polygame dans le cœur. Enquête sur la fracture entre le contrat de mariage et la réalité des corps et des désirs dans les sociétés africaines contemporaines."},
+  {cat:"essai",t:"L'Infidélité Expliquée aux Hommes Mariés",s:"(et à leurs Épouses)",a:"Lury NKOUESSOM",p:3500,d:"Amadou aime sa femme. Il aime aussi Fatou, son «deuxième bureau» depuis quatre ans. Il ne se voit ni menteur ni traître. À partir de cette scène banale dans des milliers de foyers africains, une analyse sans tabou de la polygynie clandestine et un manuel pour couples qui veulent se regarder en face."},
+  {cat:"essai",t:"Mâles Dominants, Femmes en Compétition",a:"Lury NKOUESSOM",p:3500,d:"Toutes les gazelles pour quelques lions ? L'auteur, lui-même polygame, dissèque le grand casting impitoyable de l'amour africain : femmes en compétition pour les «mâles dominants», jeunes hommes frustrés et invisibles, et une monogamie imposée qui fabrique l'hypocrisie. Essai explosif et honnête."},
+  {cat:"essai",t:"Polygamies d'Afrique",s:"Tabous, Réalités et Avenirs",a:"Lury NKOUESSOM",p:3500,d:"Ni plaidoyer pour le retour au passé, ni manifeste occidental anti-polygamie. L'auteur, juriste et polygame, ouvre la palabre : histoire, droit, économie, féminisme, tout est sur la table. Et si on assumait la polygamie au lieu de la pratiquer en cachette ? Le livre qui brise le tabou."},
+  {cat:"essai",t:"Le Mariage, entre Intérêt et Sentiment",a:"Lury NKOUESSOM",p:3500,d:"Et si la crise du mariage venait du triomphe absolu de l'amour romantique ? Du mariage arrangé au mariage d'amour, puis au divorce de masse : une enquête qui déconstruit nos certitudes et propose un nouveau pacte conjugal, entre raison, sentiment et volonté."},
+  {cat:"essai",t:"La Balance et le Cousin",s:"Le juge africain face aux siens",a:"Lury NKOUESSOM",p:3500,d:"L'indépendance de la justice menacée de toutes parts : pressions de l'exécutif, corruption privée, et liens du sang. À travers l'histoire du juge Bakary Koné, forcé de juger son propre cousin à Gao, cet essai-récit révèle comment famille, pouvoir et argent conspirent pour mettre le magistrat africain à genoux."},
+  {cat:"essai",t:"Dieu n'est pas Africain",a:"Lury NKOUESSOM",p:3500,d:"Du Liberia en guerre au Sahel, l'itinéraire d'un juriste africain devenu athée. Un plaidoyer sans concession pour libérer le continent de l'aliénation religieuse, qu'elle soit importée ou endogène. «L'avenir de l'Afrique sera humaniste, ou il ne sera pas.»"},
+  {cat:"essai",t:"Le procès de Dieu",a:"Lury NKOUESSOM",p:3500,d:"Il y a vingt ans, j'ai prêté serment de défendre la justice. Aujourd'hui, j'accuse celui qui prétend en être l'architecte. Du Kivu au Sahel, un avocat met Dieu en procès : pièces à conviction, contre-interrogatoire des textes sacrés, réquisitoire, verdict. Et une lettre à ses enfants en guise d'épilogue."},
+  {cat:"essai",t:"L'enfer n'existe pas",s:"Plus grande escroquerie morale de l'histoire",a:"Lury NKOUESSOM",p:3500,d:"À sept ans, assis à l'école du dimanche, l'auteur découvre un feu qui ne s'éteint jamais. Cette cicatrice ne l'a plus quitté. Enquête historique, psychologique et philosophique sur la plus grande escroquerie morale de l'histoire : une idée fabriquée par les hommes pour briser les esprits humains."},
+  {cat:"essai",t:"Le Dividende de la dignité",s:"Pour un Revenu Universel de Base",a:"Lury NKOUESSOM",p:3500,d:"Et si chaque Africain recevait un revenu de base ? Pas une aumône, mais un dividende de dignité. Essai-manifeste qui chiffre, argumente et imagine un continent libéré de la misère structurelle."},
+  {cat:"essai",t:"L'Imposture du Quitte Ton Job",s:"Critique de la Religion du Succès",a:"Lury NKOUESSOM",p:3500,d:"«Quitte ton job, deviens ton propre patron !» Le nouvel évangile des influenceurs en baskets griffées. Pendant ce temps, 20 millions de jeunes Africains cherchent désespérément un emploi. Enquête lucide qui réhabilite le salariat et démonte l'imposture de la religion du succès individuel."},
+  {cat:"essai",t:"Israël ou la Supercherie du Peuple Élu",a:"Lury NKOUESSOM",p:3500,d:"Un peuple élu par Dieu ? L'auteur, juriste et athée, démonte le récit biblique de l'élection, ses usages politiques contemporains et ses conséquences sur le droit international. Essai courageux et documenté."},
+  {cat:"essai",t:"L'Imposture du Sauveur",s:"De la Rédemption à la Démission",a:"Lury NKOUESSOM",p:3500,d:"Du Christ à l'Homme Providentiel, la promesse est la même : un autre viendra nous sauver. Mais le Sauveur ne nous libère pas de nos problèmes, il nous libère de notre capacité à les résoudre. Essai philosophique et politique sur la servitude volontaire et l'urgence de devenir un peuple adulte."},
+  {cat:"essai",t:"Petit traité sur la mort",s:"À l'usage des vivants",a:"Lury NKOUESSOM",p:3500,d:"Un dossier de succession au Liberia, une bataille d'héritiers pour des médailles sans valeur : c'est là que tout commence. En juriste et philosophe, l'auteur propose une méditation laïque sur la finitude. Comment faire la paix avec la mort pour enfin commencer à vivre véritablement."},
+  {cat:"essai",t:"Les Soldats de Dieu",s:"Réquisitoire contre les milices de l'Invisible",a:"Lury NKOUESSOM",p:3500,d:"Cet ouvrage n'est pas un dialogue. C'est un réquisitoire. En juriste qui a vu la justice s'effondrer partout où la loi de Dieu était invoquée, l'auteur ouvre le procès des milices de l'Invisible : ceux qui, au nom d'un commandant fantôme, s'érigent en avocats, juges et bourreaux."},
+  {cat:"essai",t:"Le Crépuscule de Dieu",a:"Lury NKOUESSOM",p:3500,d:"Et si Dieu était une hypothèse dont l'humanité n'avait plus besoin ? Depuis le Mali, un juriste devenu athée interroge la science, la morale et le sens de la vie sans recours au divin. Itinéraire intellectuel rare et courageux depuis le continent le plus croyant du monde."},
+  {cat:"essai",t:"La Politique n'est pas un métier",a:"Lury NKOUESSOM",p:3500,d:"En vingt ans sur le terrain en Afrique, l'auteur a vu les meilleures lois se briser contre le mur des intérêts privés. Ce manifeste propose une révolution : rotation obligatoire, fin des privilèges, redevabilité totale. La politique comme service civique, pas comme carrière."},
+  {cat:"essai",t:"Un homme, une femme, un mensonge",s:"La Bible et la polygamie",a:"Lury NKOUESSOM",p:3500,d:"Abraham était bigame. David avait huit épouses. Moïse était polygame. Alors d'où vient l'exigence monogame du christianisme ? En juriste et exégète, l'auteur rouvre le dossier biblique avec une rigueur implacable. Verdict : la monogamie n'est pas dans les Écritures. Elle est dans la traduction."},
+  {cat:"essai",t:"Le Mariage qu'on nous a vendu",s:"Critique africaine du mariage d'amour",a:"Lury NKOUESSOM",p:3500,d:"Il est vingt heures à Bamako. La grand-mère ne comprend pas la série brésilienne. Sa petite-fille étudiante regarde avec des yeux brillants. Entre ces deux regards, toute l'histoire du mariage d'amour importé en Afrique. Un essai qui remonte aux origines de ce que l'on nous a vendu comme l'unique façon d'aimer."},
+  {cat:"essai",t:"La trahison du panafricanisme",s:"De l'idéal fédéraliste à l'impasse",a:"Lury NKOUESSOM",p:5000,d:"De Soundiata à Nkrumah, de Sankara à l'UA : 400 pages, 399 notes de bas de page, et une question qui brûle. Pourquoi le rêve d'une Afrique unie a-t-il été trahi par ceux-là mêmes qui le portaient ? L'essai de référence sur l'impasse panafricaine contemporaine."},
+  {cat:"essai",t:"Secrets de Pharmacienne",s:"Lancez votre empire de cosmétiques naturelles",a:"Dr Danielle NKOUESSOM",p:5000,d:"Karité, moringa, hibiscus : transformez les trésors de votre cuisine en entreprise rentable. Recettes professionnelles, calculs de rentabilité et stratégie marketing par une pharmacienne de Bamako. Le guide pratique pour gagner votre indépendance financière."},
+  {cat:"jur",c:"03",t:"Guide Citoyen du Code Pénal",s:"La Loi c'est pas compliqué !",a:"JURITECH",p:2500,d:"Qu'est-ce qu'un vol aggravé ? Quelle peine pour un abus de confiance ? Le Code pénal 2024 expliqué sans jargon, en langage citoyen. Pour que la loi cesse d'être un mystère."},
+  {cat:"jur",c:"03",t:"Guide Citoyen du CPP",s:"La Loi c'est pas compliqué !",a:"JURITECH",p:2500,d:"De la plainte au jugement : comment fonctionne réellement la machine pénale au Mali ? Garde à vue, instruction, procès, recours — tout ce que le citoyen doit savoir, sans jargon."},
+  {cat:"jur",c:"03",t:"Guide Citoyen du Code de la Famille",s:"La Loi c'est pas compliqué !",a:"JURITECH",p:2500,d:"Mariage, divorce, filiation, héritage : vos droits familiaux enfin expliqués en langage clair. Le Code de la Famille malien accessible à tous, pas seulement aux avocats."},
+  {cat:"jur",c:"03",t:"Guide Citoyen du droit du travail",s:"La Loi c'est pas compliqué !",a:"JURITECH",p:2500,d:"Mon patron peut-il me licencier sans motif ? Combien de jours de congé ai-je ? Contrat, salaire, licenciement : le droit du travail malien enfin à la portée de ceux qu'il protège."},
+  {cat:"jur",c:"03",t:"Guide Citoyen du droit foncier",s:"La Loi c'est pas compliqué !",a:"JURITECH",p:2500,d:"Titre foncier, concession rurale, litiges de voisinage : la terre est au cœur de tous les conflits au Mali. Ce guide explique vos droits fonciers en langage simple."},
+  {cat:"jur",c:"01",t:"Droit pénal général",a:"Pr Kissima GAKOU & Dr Lury NKOUESSOM",p:10000,d:"Théorie de l'infraction, responsabilité pénale, peines et mesures de sûreté selon la loi n°2024-027. Le manuel de référence pour étudiants et praticiens du droit pénal malien."},
+  {cat:"jur",c:"01",t:"Droit pénal spécial",a:"Pr Kissima GAKOU & Dr Lury NKOUESSOM",p:10000,d:"De l'homicide au cyberharcèlement, du vol au terrorisme : chaque infraction du Code pénal 2024 analysée, élément par élément, avec ses peines et sa jurisprudence."},
+  {cat:"jur",c:"01",t:"Manuel de procédure pénale",a:"Pr Kissima GAKOU & Dr Lury NKOUESSOM",p:10000,d:"Enquête préliminaire, instruction, jugement, voies de recours et exécution des peines : la procédure pénale malienne décryptée selon la loi n°2024-028."},
+  {cat:"jur",c:"01",t:"Traité de droit constitutionnel malien",a:"Dr Souleymane DE & Dr Lury NKOUESSOM",p:10000,d:"De la Constitution de 1960 à la Transition : histoire constitutionnelle, institutions, droits fondamentaux et séparation des pouvoirs au Mali. L'ouvrage de référence."},
+  {cat:"jur",c:"01",t:"Droit des Personnes et de la Famille",a:"Dr Aguissa Ag MOHAMED",p:10000,d:"Personnalité juridique, état civil, nom, domicile, capacité, protection des mineurs et des majeurs vulnérables : le droit des personnes au Mali, Vol. 1 de la collection Aguissa Ag MOHAMED."},
+  {cat:"jur",c:"01",t:"Droit du mariage",a:"Dr Aguissa Ag MOHAMED",p:10000,d:"Conditions de fond et de forme du mariage, régimes matrimoniaux, divorce et droits successoraux : le droit de la famille au Mali, Vol. 2 de la collection Aguissa Ag MOHAMED."},
+  {cat:"jur",c:"01",t:"Introduction générale au droit malien",a:"Protranslex Éditions",p:7500,d:"Qu'est-ce que le droit ? Comment s'organise la justice malienne ? Sources, hiérarchie des normes, droits subjectifs et système de la preuve : le socle pour tout étudiant en droit au Mali."},
+  {cat:"jur",c:"02",t:"Guide comparatif CPP 2001-2024",a:"JURITECH",p:7500,d:"1 399 articles comparés un par un : CPP 2001 vs CPP 2024. Tableaux de concordance, 5 annexes, 25 fichiers. L'outil indispensable pour tout praticien en période de transition."},
+  {cat:"jur",c:"02",t:"Guide des nouvelles incriminations",a:"Protranslex Éditions",p:5000,d:"Quelles infractions ont été créées ? Lesquelles supprimées ? Lesquelles modifiées ? Tout ce qui change avec le Code pénal 2024, classé et analysé pour les praticiens."},
+  {cat:"jur",c:"02",t:"Guide des droits de la défense",a:"JURITECH",p:5000,d:"De la garde à vue à la cassation : les droits de la défense à chaque étape de la procédure pénale malienne selon le CPP 2024. Guide pratique pour avocats et justiciables."},
+  {cat:"jur",c:"02",t:"Techniques spéciales d'enquête",a:"Protranslex Éditions",p:7500,d:"Infiltration, écoutes téléphoniques, surveillance électronique : le CPP 2024 introduit les techniques spéciales d'enquête au Mali. Cadre légal, garanties et limites."},
+  {cat:"jur",c:"02",t:"Manuel du Parajuriste Communautaire",a:"JURITECH",p:5000,d:"13 chapitres pour transformer un citoyen engagé en parajuriste efficace. Accueil, écoute, orientation, médiation : le manuel de terrain pour rapprocher la justice des communautés."},
+  {cat:"jur",c:"02",t:"Modules de formation du parajuriste",a:"JURITECH",p:5000,d:"14 modules de formation clé en main : droits fondamentaux, procédure pénale, droit foncier, VBG, médiation. Pour formateurs et organisations d'accès au droit."},
+  {cat:"jur",c:"04",t:"Lexique de droit constitutionnel malien",a:"Dr Souleymane DE",p:5000,d:"De « Assemblée nationale » à « Vote de confiance » : chaque terme du droit constitutionnel malien défini, contextualisé et illustré. Outil de travail pour étudiants et journalistes."},
+  {cat:"jur",c:"04",t:"Lexique de droit pénal malien",a:"Dr Lury NKOUESSOM",p:5000,d:"De « Abus de confiance » à « Vol aggravé » : le vocabulaire complet du droit pénal malien selon le Code 2024. Définitions précises, références textuelles, exemples."},
+  {cat:"jur",c:"05",t:"La trahison du panafricanisme",a:"Dr Lury NKOUESSOM",p:7500,d:"Essai majeur croisant philosophie, histoire, droit et politique. De l'idéal fédéraliste de Nkrumah à l'impasse de l'Union Africaine, une autopsie sans concession du rêve panafricain et des pistes pour le refonder."},
+  {cat:"jur",c:"05",t:"Pour la gratuité de la justice",a:"Dr Lury NKOUESSOM",p:5000,d:"En vingt ans dans les tribunaux d'Afrique, l'auteur a vu le même fleuve infranchissable : l'argent. Ce livre propose l'impensable : une justice entièrement gratuite, financée par l'État, avec des avocats publics pour tous. Pas une utopie, mais un plan concret, chiffré et applicable."},
+  {cat:"jur",c:"05",t:"L'accès à la justice au Mali",s:"Mimétisme juridique et hybridation",a:"Protranslex Éditions",p:7500,d:"La justice malienne est-elle accessible ? Quels obstacles empêchent les citoyens d'y recourir ? Essai doctrinal qui propose de dépasser le modèle importé pour un système adapté aux réalités du pays."},
+  {cat:"jur",c:"05",t:"Responsabilité pénale des personnes morales",a:"Protranslex Éditions",p:5000,d:"Le Code pénal 2024 introduit la responsabilité pénale des personnes morales au Mali. Analyse doctrinale du nouveau régime : conditions, peines, implications pour les entreprises."},
+  {cat:"jur",c:"05",t:"Outils juridiques contre les VBG",a:"Protranslex Éditions",p:5000,d:"Harcèlement, viol conjugal, mariage forcé : le Code pénal 2024 renforce l'arsenal juridique contre les VBG au Mali. Analyse des nouveaux outils et stratégies de mise en œuvre."},
+  {cat:"jur",c:"05",t:"La Traite des Personnes à l'Ère Numérique",a:"Protranslex Éditions",p:7500,d:"Recrutement en ligne, exploitation via réseaux sociaux, traite transfrontalière numérique : les nouvelles formes de traite des personnes au Mali et les réponses juridiques adaptées."},
+  {cat:"jur",c:"06",t:"Traité de cybercriminalité",a:"Protranslex Éditions",p:10000,d:"Cybercriminalité, preuve électronique, coopération judiciaire internationale : traité complet sur le droit pénal du numérique dans l'espace OHADA et au Mali."},
+  {cat:"jur",c:"04",t:"Vade-mecum de la traduction des contrats OHADA",s:"Guide bilingue français-anglais",a:"Dr Lury NKOUESSOM",p:7500,d:"Traduire un contrat, c'est faire dialoguer deux systèmes juridiques. Ce guide pratique, truffé d'exemples bilingues, de tableaux comparatifs et d'exercices corrigés, est l'outil de référence pour tout juriste ou traducteur travaillant à l'interface entre droit OHADA et Common Law."},
+  {cat:"jur",c:"06",t:"De l'OHADA à la Common Law",s:"Maîtriser l'anglais juridique en Afrique",a:"Dr Lury NKOUESSOM",p:10000,d:"Le guide complet du juriste francophone qui doit négocier, plaider ou arbitrer en anglais. Vocabulaire, contrats, procédure de common law et exercices pratiques. Indispensable dans un espace ouest-africain où OHADA et common law se croisent chaque jour."},
+  {cat:"jur",c:"07",t:"Exercices de procédure pénale",a:"Pr Kissima GAKOU & Dr Lury NKOUESSOM",p:5000,d:"Cas pratiques, commentaires d'arrêts, dissertations juridiques : exercices corrigés et méthodologie détaillée pour réussir en procédure pénale malienne."},
+  {cat:"jur",c:"07",t:"30 Maximes Juridiques Expliquées à ma Fille",a:"Dr Lury NKOUESSOM",p:3500,d:"Dura lex, sed lex. Pacta sunt servanda. In dubio pro reo. Un père juriste écrit à sa fille pour lui transmettre les 30 maximes qui fondent la justice depuis Rome. Chaque adage devient une leçon de vie, entre droit, philosophie et amour paternel."},
+  {cat:"jur",c:"07",t:"Fiches pénales par infraction",a:"Protranslex Éditions",p:5000,d:"Une fiche par infraction : éléments constitutifs, peines encourues, circonstances aggravantes, jurisprudence. L'outil de révision et de pratique indispensable du pénaliste."},
+];
+
+/* ----------------------------------------------------------------
+   GUIDES PRATIQUES — EXEMPLES à remplacer par vos vrais guides.
+   Supprimez `demo:true` quand le produit est réel.
+   ---------------------------------------------------------------- */
+const GUIDES = [
+  {cat:"guide",t:"Guide : publier son premier livre en Afrique",a:"Metamorphrase",p:7500,demo:true,
+   d:"De la première page au livre imprimé : manuscrit, correction, ISBN, impression à la demande et vente en ligne. Un parcours pas à pas adapté aux réalités du marché africain. (Exemple — remplacez par votre guide.)"},
+  {cat:"guide",t:"Guide : vivre de la traduction professionnelle",a:"Metamorphrase",p:9500,demo:true,
+   d:"Trouver ses premiers clients, fixer ses tarifs, se faire assermenter, s'outiller : le guide complet pour bâtir une activité de traduction rentable. (Exemple — remplacez par votre guide.)"},
+  {cat:"guide",t:"Guide : l'IA au service des juristes",a:"Metamorphrase",p:8500,demo:true,
+   d:"Recherche juridique assistée, rédaction d'actes, veille législative : méthodes et outils concrets pour intégrer l'intelligence artificielle dans votre pratique du droit. (Exemple — remplacez par votre guide.)"},
+];
+
+/* ----------------------------------------------------------------
+   FORMATIONS — EXEMPLES à remplacer par vos vraies formations.
+   ---------------------------------------------------------------- */
+const FORMATIONS = [
+  {cat:"formation",t:"Formation : écrire et publier son livre en 90 jours",a:"Metamorphrase",p:35000,demo:true,
+   d:"Programme vidéo en 8 modules + ateliers d'écriture guidés : de l'idée au manuscrit terminé, puis à la publication. Accès à vie et accompagnement WhatsApp. (Exemple — remplacez par votre formation.)"},
+  {cat:"formation",t:"Formation : devenir traducteur agréé",a:"Metamorphrase",p:45000,demo:true,
+   d:"Méthodologie de la traduction juridique, certification des documents officiels, procédure d'agrément près les tribunaux : une formation complète, vidéos + supports PDF. (Exemple — remplacez par votre formation.)"},
+  {cat:"formation",t:"Formation : maîtriser la rédaction juridique",a:"Metamorphrase",p:30000,demo:true,
+   d:"Conclusions, requêtes, contrats : les techniques de rédaction des professionnels du droit, illustrées par des modèles téléchargeables. (Exemple — remplacez par votre formation.)"},
+];
+
+/* ================================================================
+   LOGIQUE DE LA BOUTIQUE — rien à modifier ci-dessous
+   ================================================================ */
+const META = {
+  roman:     {label:"Roman",      format:"PDF / EPUB", colors:["#8B1A1A","#C0392B"]},
+  essai:     {label:"Essai",      format:"PDF / EPUB", colors:["#B8741A","#D4862A"]},
+  jur:       {label:"Droit",      format:"PDF",        colors:["#1B2A4A","#34517F"]},
+  guide:     {label:"Guide",      format:"PDF",        colors:["#2D1B4E","#5B3E8A"]},
+  formation: {label:"Formation",  format:"Vidéo + PDF",colors:["#125A55","#1E7A74"]},
+};
+const CATS = [
+  {k:"tous",l:"Tous"},{k:"roman",l:"Romans"},{k:"essai",l:"Essais"},
+  {k:"jur",l:"Droit & OHADA"},{k:"guide",l:"Guides"},{k:"formation",l:"Formations"},
+];
+const ALL = [...EBOOKS, ...GUIDES, ...FORMATIONS].map((x,i)=>({...x,id:i}));
+
+const fmt = n => n.toLocaleString("fr-FR").replace(/ | /g," ");
+const norm = s => (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+const $ = id => document.getElementById(id);
+
+let activeCat = "tous";
+let query = "";
+let cart = [];
+try { cart = JSON.parse(localStorage.getItem("mp_cart")||"[]").filter(id=>ALL[id]); } catch(e) {}
+
+/* ----- Filtres ----- */
+function renderChips(){
+  $("chips").innerHTML = CATS.map(c=>
+    `<button class="chip${c.k===activeCat?" on":""}" data-k="${c.k}">${c.l}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    activeCat=b.dataset.k; renderChips(); renderGrid();
+  });
+}
+
+/* ----- Grille ----- */
+function renderGrid(){
+  const q = norm(query);
+  const list = ALL.filter(x =>
+    (activeCat==="tous"||x.cat===activeCat) &&
+    (!q || norm(x.t+" "+(x.s||"")+" "+(x.a||"")+" "+x.d).includes(q)));
+  $("grid").innerHTML = list.length ? list.map(cardHTML).join("")
+    : `<p class="empty">Aucun produit ne correspond à votre recherche.</p>`;
+  $("grid").querySelectorAll(".add-btn").forEach(b=>b.onclick=()=>addToCart(+b.dataset.id));
+}
+function cardHTML(x){
+  const m = META[x.cat];
+  const inCart = cart.includes(x.id);
+  return `<article class="card">
+    <div class="cover" style="background:linear-gradient(135deg,${m.colors[0]},${m.colors[1]})">
+      <div class="tags"><span class="tag">${m.label}</span><span class="tag">${m.format}</span>${x.demo?'<span class="tag demo">Exemple</span>':""}</div>
+      <h3>${x.t}</h3>
+    </div>
+    <div class="card-body">
+      ${x.s?`<p class="card-sub">${x.s}</p>`:""}
+      <p class="card-author">${x.a}</p>
+      <p class="card-desc">${x.d}</p>
+      <div class="card-foot">
+        <span class="price">${fmt(x.p)} <small>${CONFIG.currency}</small></span>
+        <button class="add-btn${inCart?" added":""}" data-id="${x.id}">${inCart?"✓ Ajouté":"+ Panier"}</button>
+      </div>
+    </div>
+  </article>`;
+}
+
+/* ----- Panier ----- */
+function saveCart(){ localStorage.setItem("mp_cart", JSON.stringify(cart)); }
+function addToCart(id){
+  if(!cart.includes(id)){ cart.push(id); saveCart(); toast("Ajouté au panier ✓"); }
+  renderCart(); renderGrid();
+}
+function removeFromCart(id){
+  cart = cart.filter(x=>x!==id); saveCart(); renderCart(); renderGrid();
+}
+function cartTotal(){ return cart.reduce((s,id)=>s+ALL[id].p,0); }
+function renderCart(){
+  $("cartCount").textContent = cart.length;
+  $("cartTotal").textContent = fmt(cartTotal())+" "+CONFIG.currency;
+  $("waOrder").disabled = !cart.length;
+  $("cartItems").innerHTML = cart.length ? cart.map(id=>{
+    const x=ALL[id], m=META[x.cat];
+    return `<div class="cart-item">
+      <div class="cart-item-info"><strong>${x.t}</strong><span>${m.label} — ${m.format}</span></div>
+      <span class="cart-item-price">${fmt(x.p)}</span>
+      <button class="cart-remove" data-id="${x.id}" aria-label="Retirer">✕</button>
+    </div>`;
+  }).join("") : `<p class="cart-empty">Votre panier est vide.<br>Parcourez le catalogue pour ajouter des produits.</p>`;
+  $("cartItems").querySelectorAll(".cart-remove").forEach(b=>b.onclick=()=>removeFromCart(+b.dataset.id));
+}
+
+/* ----- Commande WhatsApp ----- */
+$("waOrder").onclick = () => {
+  if(!cart.length) return;
+  const lines = cart.map(id=>{
+    const x=ALL[id], m=META[x.cat];
+    return `• ${x.t} (${m.label}, ${m.format}) — ${fmt(x.p)} ${CONFIG.currency}`;
+  });
+  const msg = `Bonjour ! Je souhaite commander sur la boutique ${CONFIG.shopName} :\n\n`
+    + lines.join("\n")
+    + `\n\nTOTAL : ${fmt(cartTotal())} ${CONFIG.currency}\n\nMerci de me confirmer le moyen de paiement.`;
+  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`,"_blank","noopener");
+};
+
+/* ----- Drawer / recherche / toast ----- */
+function openCart(o){ $("drawer").classList.toggle("open",o); $("overlay").classList.toggle("open",o); }
+$("cartOpen").onclick = ()=>openCart(true);
+$("cartClose").onclick = ()=>openCart(false);
+$("overlay").onclick = ()=>openCart(false);
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") openCart(false); });
+$("q").addEventListener("input",e=>{ query=e.target.value; renderGrid(); });
+let toastTimer;
+function toast(txt){
+  const t=$("toast"); t.textContent=txt; t.classList.add("show");
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove("show"),1800);
+}
+
+renderChips(); renderGrid(); renderCart();
+</script>
+</body>
+</html>
